@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Распиcание лекций Школы Разработки Интерфейсов</title>
+    <title>Распиcание лекций Школы Разработки Интерфейсов - Backbone</title>
     <meta name="description" content="Распиcание лекций Школы Разработки Интерфейсов">
     <meta name="keywords" content="распиcание, ШРИ">
     <meta name="author" content="Лукьянчук С.В.">
@@ -10,47 +10,64 @@
 
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" media="print" href="print.css" />
-        <title>Backbone</title>
-        <script src="js/jquery.js"></script>
-        <script src="js/underscore-min.js"></script>
-        <script src="js/backbone-min.js"></script>
-        <script src="js/date-ru-RU.js"></script>
-    </head>
-    <body>
-        <div class="b-nav"></div>
-		<div class="b-update"><div class="b-update__link"><a href="#" class="b-update__enter b-update__btn">Обновить расписание</a></div><div class="b-update__block"><textarea name="b-update__value" class="b-update__text"></textarea><br /><a href="#" class="b-update__close">Закрыть</a><a href="#" class="b-update__clear">Очистить</a><a href="#" class="b-update__send b-update__btn">Отправить</a></div></div>
-        <div class="b-timetable">
 
+    <script src="js/jquery.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/date-ru-RU.js"></script>
+
+</head>
+
+<body>
+    <div class="b-nav"></div>
+	<div class="b-update">
+        <div class="b-update__link">
+            <a href="#" class="b-update__enter b-update__btn">Обновить расписание</a>
         </div>
-        <div class="b-popup" style="display: none;">
-            <i class="b-popup__close"></i>
-            <div class="b-lection" data-id="id">
-
-            </div>
+        <div class="b-update__block">
+            <textarea name="b-update__value" class="b-update__text"></textarea><br />
+            <a href="#" class="b-update__close">Закрыть</a>
+            <a href="#" class="b-update__clear">Очистить</a>
+            <a href="#" class="b-update__send b-update__btn">Отправить</a>
         </div>
+    </div>
 
-        <script type="text/template" class="b-weeks__list">
-            <ul class="b-nav__list">
-                <% _.each(weeks, function (week, index) { %>
-                    <li class="b-nav__item">
-                        <a href="#week/<%= index %>" class="b-nav__link"><%= week.name %></a>
+    <div class="b-timetable">
+
+    </div>
+
+    <div class="b-popup" style="display: none;">
+        <i class="b-popup__close"></i>
+        <div class="b-lection" data-id="id">
+        </div>
+    </div>
+
+    <script type="text/template" class="b-weeks__list">
+        <ul class="b-nav__list">
+            <% _.each(weeks, function (week, index) { %>
+                <li class="b-nav__item">
+                    <a href="#week/<%= index %>" class="b-nav__link"><%= week.name %></a>
                         <div class="b-week">
                             <ul class="b-week__list">
                                 <% _.each(week.dates, function (lectionsList, day) { %>
                                     <% _.each(lectionsList, function (lectionId) { %>
-                                        <li class="b-week__item"><a href="#show/<%= lectionId %>" class="b-week__link b-open__lection" data-id="<%= lectionId %>"><span class="b-week__date"><%= GetTextDate(day, 'weeksDate') %></span> <%= lections[lectionId].name %></a></li>
+                                        <li class="b-week__item">
+                                            <a href="#show/<%= lectionId %>" class="b-week__link b-open__lection" data-id="<%= lectionId %>">
+                                                <span class="b-week__date"><%= GetTextDate(day, 'weeksDate') %></span> <%= lections[lectionId].name %>
+                                            </a>
+                                        </li>
                                     <% }); %>
                                 <% }); %>
                             </ul>
                         </div>
-                    </li>
+                </li>
                 <% }); %>
-            </ul>
-        </script>
+        </ul>
+    </script>
 
-        <script type="text/template" class="b-lection__list">
-            <% _.each(weeks, function (week) { %>
-                <h1 class="b-timetable__weekname"><%= week.name %></h1>
+    <script type="text/template" class="b-lection__list">
+        <% _.each(weeks, function (week) { %>
+            <h1 class="b-timetable__weekname"><%= week.name %></h1>
                 <% _.each(week.meta, function (meta) { %>
                     <span class="b-timetable__meta"><%= meta %></span>
                 <% }); %>
@@ -75,31 +92,32 @@
                         </li>
                     <% }); %>
                 </ul>
-            <% }); %>
-        </script>
+        <% }); %>
+    </script>
 		
-		<script type="text/template" class="b-lection__week">
-			<h1 class="b-timetable__weekname"><%= week.name %></h1>
+	<script type="text/template" class="b-lection__week">
+		<h1 class="b-timetable__weekname"><%= week.name %></h1>
             <% _.each(week.meta, function (meta) { %>
-            <span class="b-timetable__meta"><%= meta %></span>
+                <span class="b-timetable__meta"><%= meta %></span>
             <% }); %>
             <ul class="b-lections">
                 <% _.each(week.dates, function (dayLections, day) { %>
                 <li class="b-lections__day">
-                    <div class="b-lections-date"><%= GetTextDate(day, 'lectionsDate') %></div><span class="b-lections__meta"></span>
+                    <div class="b-lections-date"><%= GetTextDate(day, 'lectionsDate') %></div>
+                    <span class="b-lections__meta"></span>
                     <% _.each(dayLections, function (lectionId) { %>
-                    <% var lection = lections[lectionId]; %>
-                    <div class="b-lections__lection">
-                        <a href="#show/<%= lectionId %>" class="b-lections__link b-open__lection">
-                            <span class="b-lections__time"><%= lection.time %></span>
-                            <%= lection.name %> <span class="b-lections__lector"></span>
-                        </a>
-                        <div class="b-icons">
-                            <a class="b-icons__link b-icons__video<% if (lection.video != '') { %> b-icons__type_on<% } %>" href="<%= lection.video %>"></a>
-                            <a class="b-icons__link b-icons__ppt<% if (lection.ppt != '') { %> b-icons__type_on<% } %>" href="<%= lection.ppt %>"></a>
-                            <a class="b-icons__link b-icons__task<% if (lection.task != '') { %> b-icons__type_on<% } %>" href="<%= lection.task %>"></a>
+                        <% var lection = lections[lectionId]; %>
+                        <div class="b-lections__lection">
+                            <a href="#show/<%= lectionId %>" class="b-lections__link b-open__lection">
+                                <span class="b-lections__time"><%= lection.time %></span>
+                                <%= lection.name %> <span class="b-lections__lector"></span>
+                            </a>
+                            <div class="b-icons">
+                                <a class="b-icons__link b-icons__video<% if (lection.video != '') { %> b-icons__type_on<% } %>" href="<%= lection.video %>"></a>
+                                <a class="b-icons__link b-icons__ppt<% if (lection.ppt != '') { %> b-icons__type_on<% } %>" href="<%= lection.ppt %>"></a>
+                                <a class="b-icons__link b-icons__task<% if (lection.task != '') { %> b-icons__type_on<% } %>" href="<%= lection.task %>"></a>
+                            </div>
                         </div>
-                    </div>
                     <% }); %>
                 </li>
                 <% }); %>
@@ -108,33 +126,77 @@
 		
 		<script type="text/template" class="b-lection__template">
             <div class="b-lection__descr">
-                <h1><div class="b-edit" data-type="name"><span class="b-edit__label b-lection__name"><%= lection.name %></span><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.name %>" /><i class="b-edit__ico"></i></div></h1>
+                <h1>
+                    <div class="b-edit" data-type="name">
+                        <span class="b-edit__label b-lection__name"><%= lection.name %></span>
+                        <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.name %>" />
+                        <i class="b-edit__ico"></i>
+                    </div>
+                </h1>
 
-                <!--<span class="b-lection__date"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></span>-->
-                <div class="b-edit" data-type="date"><span class="b-lection__date"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></</span><select size="3" class="b-edit__value" style="display: none;"><% _.each(dates, function (datename) {%><option value="<%= datename %>"<% if (datename == date) { %>selected="selected"<% } %>><%= datename %></option><%}) %></select><i class="b-edit__ico"></i></div>
+
+                <div class="b-edit" data-type="date">
+                    <span class="b-lection__date"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></</span>
+                    <select size="3" class="b-edit__value" style="display: none;">
+                        <% _.each(dates, function (datename) {%>
+                            <option value="<%= datename %>"<% if (datename == date) { %>selected="selected"<% } %>><%= datename %></option>
+                        <%}) %></select>
+                    <i class="b-edit__ico"></i>
+                </div>
+
                 <ul>
                     <li class="b-lection__video">
-                        <div class="b-edit" data-type="video"><a href="<%= lection.video %>" class="b-icons__video b-lection__link b-lection__link_type_video"<% if(lection.video != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">Видео</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.video %>" /><i class="b-edit__ico"></i>
+                        <div class="b-edit" data-type="video">
+                            <a href="<%= lection.video %>" class="b-icons__video b-lection__link b-lection__link_type_video"<% if(lection.video != '') { %> style="background-position: 0 0;"<% } %>>
+                                <span class="b-edit__label">Видео</span>
+                            </a>
+                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.video %>" />
+                            <i class="b-edit__ico"></i>
                         </div>
                     </li>
                     <li class="b-lection__ppt">
-                        <div class="b-edit" data-type="ppt"><a href="<%= lection.ppt %>" class="b-icons__ppt b-lection__link b-lection__link_type_ppt"<% if(lection.ppt != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">Презентация</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.ppt %>" /><i class="b-edit__ico"></i>
+                        <div class="b-edit" data-type="ppt">
+                            <a href="<%= lection.ppt %>" class="b-icons__ppt b-lection__link b-lection__link_type_ppt"<% if(lection.ppt != '') { %> style="background-position: 0 0;"<% } %>>
+                                <span class="b-edit__label">Презентация</span>
+                            </a>
+                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.ppt %>" />
+                            <i class="b-edit__ico"></i>
                         </div>
                     </li>
                     <li class="b-lection__github">
-                        <div class="b-edit" data-type="github"><a href="<%= lection.github %>" class="b-icons__github b-lection__link b-lection__link_type_github"<% if(lection.github != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">GitHUB</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.github %>" /><i class="b-edit__ico"></i>
+                        <div class="b-edit" data-type="github">
+                            <a href="<%= lection.github %>" class="b-icons__github b-lection__link b-lection__link_type_github"<% if(lection.github != '') { %> style="background-position: 0 0;"<% } %>>
+                                <span class="b-edit__label">GitHUB</span>
+                            </a>
+                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.github %>" />
+                            <i class="b-edit__ico"></i>
                         </div>
                     </li>
                     <li class="b-lection__club">
-                        <div class="b-edit" data-type="club"><a href="<%= lection.club %>" class="b-icons__club b-lection__link b-lection__link_type_club"<% if(lection.club != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">Обсуждения в Клубе</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.club %>" /><i class="b-edit__ico"></i>
+                        <div class="b-edit" data-type="club">
+                            <a href="<%= lection.club %>" class="b-icons__club b-lection__link b-lection__link_type_club"<% if(lection.club != '') { %> style="background-position: 0 0;"<% } %>>
+                                <span class="b-edit__label">Обсуждения в Клубе</span>
+                            </a>
+                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.club %>" />
+                            <i class="b-edit__ico"></i>
                         </div>
                     </li>
                     <li class="b-lection__task">
-                        <div class="b-edit" data-type="task"><a href="<%= lection.task %>" class="b-icons__task b-lection__link b-lection__link_type_task"<% if(lection.task != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__task">Задание</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.task %>" /><i class="b-edit__ico"></i>
+                        <div class="b-edit" data-type="task">
+                            <a href="<%= lection.task %>" class="b-icons__task b-lection__link b-lection__link_type_task"<% if(lection.task != '') { %> style="background-position: 0 0;"<% } %>>
+                                <span class="b-edit__task">Задание</span>
+                            </a>
+                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.task %>" />
+                            <i class="b-edit__ico"></i>
                         </div>
                     </li>
                     <li class="b-lection__descr">
-                        <div class="b-edit" data-type="descr"><a href="<%= lection.descr %>" class="b-icons__descr b-lection__link b-lection__link_type_descr"<% if(lection.descr != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__descr">Описание</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.descr %>" /><i class="b-edit__ico"></i>
+                        <div class="b-edit" data-type="descr">
+                            <a href="<%= lection.descr %>" class="b-icons__descr b-lection__link b-lection__link_type_descr"<% if(lection.descr != '') { %> style="background-position: 0 0;"<% } %>>
+                                <span class="b-edit__descr">Описание</span>
+                            </a>
+                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.descr %>" />
+                            <i class="b-edit__ico"></i>
                         </div>
                     </li>
                 </ul>
@@ -143,8 +205,15 @@
                 <% lector = lectors[lection.lector] %>
                 <img src="<% if (lector.photo == '') { %>pic1.jpg<% } else { %><%= lector.photo %><% }%>" alt="" class="b-lector__img"/>
                 <div class="b-edit" data-type="lector">
-                    <a href="<%= lector.link %>" class="b-lector__name"><span class="b-edit__lectorname"><%= lector.name %></span></a>
-                    <select size="3" class="b-edit__value" style="display: none;"><% _.each(lectors, function (lector, id) { %><option<% if (id == lection.lector ) { %> selected="selected"<% } %> value="<%= id %>"><%= lector.name %></option><% }); %></select><i class="b-edit__ico"></i>
+                    <a href="<%= lector.link %>" class="b-lector__name">
+                        <span class="b-edit__lectorname"><%= lector.name %></span>
+                    </a>
+                    <select size="3" class="b-edit__value" style="display: none;">
+                        <% _.each(lectors, function (lector, id) { %>
+                            <option<% if (id == lection.lector ) { %> selected="selected"<% } %> value="<%= id %>"><%= lector.name %></option>
+                        <% }); %>
+                    </select>
+                    <i class="b-edit__ico"></i>
                 </div>
             </div>
         </script>
@@ -155,7 +224,7 @@
             {
                 "name" : "Михаил Трошев",
                 "photo" : "http://img-fotki.yandex.ru/get/6610/16051756.0/0_a5ee8_af749073_L",
-                "link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77",
+                "link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77"
             },
             {
                 "name" : "Сергей Бережной",
@@ -229,10 +298,9 @@
 
             var GetTextDate = function (day, format) {
                 var date = Date.parse(day);
-
+                var dayNumber = date.getDate();
                 switch (format) {
                     case "weeksDate":
-                        var dayNumber = date.getDate();
                         var monthNumber = date.getMonth()+1;
                         if (monthNumber < 10) {
                             monthNumber = '0'+monthNumber;
@@ -241,20 +309,17 @@
                         return dayNumber+'.'+monthNumber+' '+dayWeekText;
 
                     case "lectionsDate":
-                        var dayNumber = date.getDate();
                         var monthText = months[date.getMonth()+1];
                         var dayWeekText = weekDays[date.getDay()];
                         return '<span class="b-lections-date__day">'+dayWeekText+'</span><span class="b-lections-date__month">'+monthText+'</span><span class="b-lections-date__date">'+dayNumber+'</span>';
 
                     case "lectionDate":
-                        var dayNumber = date.getDate();
                         var monthNumber = date.getMonth()+1;
                         if (monthNumber < 10) {
                             monthNumber = '0'+monthNumber;
                         }
                         var dayWeekText = weekDays[date.getDay()];
                         return dayNumber+'.'+monthNumber+' '+dayWeekText;
-
                 }
 
                 return '';
@@ -356,7 +421,6 @@
                         if (id === false) {
                             return false;
                         }
-
                         var weeks = Models.Weeks.getAll();
                         for (var weekIndex in weeks) {
                             for (var day in weeks[weekIndex].dates) {
@@ -372,7 +436,6 @@
                         if (id === false) {
                             return false;
                         }
-
                         if (field == "date") {
                             var weeks = Models.Weeks.getAll();
                             var dates = [];
@@ -393,7 +456,6 @@
                             element[field] = value;
                             Models.Lections.replace(id, element);
                         }
-
                         this.setLection(id);
                         return true;
                     }
@@ -462,7 +524,7 @@
                     "": "MainPage",
                     "/": "MainPage",
 					"week/:id": "ShowWeek",
-					"show/:id": "ShowLection",
+					"show/:id": "ShowLection"
                 },
                 MainPage: function () {
                     Views.ViewTopWeeks.render();
