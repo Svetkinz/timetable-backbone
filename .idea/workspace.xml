@@ -20,10 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="357" column="5" selection-start="13432" selection-end="13432" vertical-scroll-proportion="0.7234042">
+            <state line="352" column="42" selection-start="13327" selection-end="13327" vertical-scroll-proportion="-16.346153">
               <folding>
                 <element signature="n#style#0;n#div#3;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#h1#0;n#div#0;n#script#3;n#body#0;n#!!top" expanded="true" />
@@ -36,6 +36,15 @@
                 <element signature="n#style#0;n#input#0;n#div#0;n#li#5;n#ul#0;n#div#0;n#script#3;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#script#3;n#body#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="42" selection-start="191" selection-end="191" vertical-scroll-proportion="0.08457711">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,6 +75,7 @@
         <option value="$PROJECT_DIR$/blocks/b-lection/b-lection.css" />
         <option value="$PROJECT_DIR$/blocks/b-edit/b-edit.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -321,7 +331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="5" selection-start="13432" selection-end="13432" vertical-scroll-proportion="0.7234042">
+        <state line="352" column="42" selection-start="13327" selection-end="13327" vertical-scroll-proportion="-16.346153">
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#h1#0;n#div#0;n#script#3;n#body#0;n#!!top" expanded="true" />
@@ -334,6 +344,13 @@
             <element signature="n#style#0;n#input#0;n#div#0;n#li#5;n#ul#0;n#div#0;n#script#3;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#1;n#script#3;n#body#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="42" selection-start="191" selection-end="191" vertical-scroll-proportion="0.08457711">
+          <folding />
         </state>
       </provider>
     </entry>
