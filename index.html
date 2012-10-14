@@ -18,6 +18,7 @@
     </head>
     <body>
         <div class="b-nav"></div>
+		<div class="b-update"><div class="b-update__link"><a href="#" class="b-update__enter b-update__btn">Обновить расписание</a></div><div class="b-update__block"><textarea name="b-update__value" class="b-update__text"></textarea><br /><a href="#" class="b-update__close">Закрыть</a><a href="#" class="b-update__clear">Очистить</a><a href="#" class="b-update__send b-update__btn">Отправить</a></div></div>
         <div class="b-timetable">
 
         </div>
@@ -486,7 +487,6 @@
 			
             $(document).ready(function () {
                 $('.b-popup__close').click(function () {
-                    //$(this).closest('.b-popup').hide();
                     $('.b-popup').hide();
                     Models.Lection.set('id', false);
                     var id = Models.Week.get('id');
@@ -511,6 +511,29 @@
                     $(this).hide();
                     $(".b-update__block").show();
                     $(".b-update__text").val('').focus();
+                    return false;
+                });
+
+                $(".b-update__close").live('click', function() {
+                    $(".b-update__block").hide();
+                    $(".b-update__enter").show();
+                    return false;
+                });
+
+                $(".b-update__clear").live('click',function(){
+                    $(".b-update__text").val('');
+                    return false;
+                });
+
+                $(".b-update__send").live('click',function(){
+                    localStorage.clear();
+                    var timetable = JSON.parse($(".b-update__text").val());
+                    localStorage.lectors = JSON.stringify(timetable.lectors);
+                    localStorage.lections = JSON.stringify(timetable.lections);
+                    localStorage.weeks = JSON.stringify(timetable.weeks);
+                    Models.Lections.initialize();
+                    Models.Weeks.initialize();
+                    document.location = "#main";
                     return false;
                 });
 			});
