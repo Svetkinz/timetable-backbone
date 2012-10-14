@@ -32,7 +32,7 @@
             <ul class="b-nav__list">
                 <% _.each(weeks, function (week, index) { %>
                     <li class="b-nav__item">
-                        <a href="#" class="b-nav__link"><%= week.name %></a>
+                        <a href="#week/<%= index %>" class="b-nav__link"><%= week.name %></a>
                         <div class="b-week">
                             <ul class="b-week__list">
                                 <% _.each(week.dates, function (lectionsList, day) { %>
@@ -60,7 +60,7 @@
                             <% _.each(dayLections, function (lectionId) { %>
                                 <% var lection = lections[lectionId]; %>
                                 <div class="b-lections__lection">
-                                    <a href="" class="b-lections__link b-open__lection">
+                                    <a href="#" class="b-lections__link b-open__lection">
                                         <span class="b-lections__time"><%= lection.time %></span>
                                         <%= lection.name %> <span class="b-lections__lector"></span>
                                     </a>
@@ -75,6 +75,34 @@
                     <% }); %>
                 </ul>
             <% }); %>
+        </script>
+		
+		<script type="text/template" class="b-lection__week">
+            <h1 class="b-timetable__weekname"><%= week.name %></h1>
+            <% _.each(week.meta, function (meta) { %>
+            <span class="b-timetable__meta"><%= meta %></span>
+            <% }); %>
+            <ul class="b-lections">
+                <% _.each(week.dates, function (dayLections, day) { %>
+                <li class="b-lections__day">
+                    <div class="b-lections-date"><%= GetTextDate(day, 'lectionsDate') %></div><span class="b-lections__meta"></span>
+                    <% _.each(dayLections, function (lectionId) { %>
+                    <% var lection = lections[lectionId]; %>
+                    <div class="b-lections__lection">
+                        <a href="#show/<%= lectionId %>" class="b-lections__link b-open__lection">
+                            <span class="b-lections__time"><%= lection.time %></span>
+                            <%= lection.name %> <span class="b-lections__lector"></span>
+                        </a>
+                        <div class="b-icons">
+                            <a class="b-icons__link b-icons__video<% if (lection.video != '') { %> b-icons__type_on<% } %>" href="<%= lection.video %>"></a>
+                            <a class="b-icons__link b-icons__ppt<% if (lection.ppt != '') { %> b-icons__type_on<% } %>" href="<%= lection.ppt %>"></a>
+                            <a class="b-icons__link b-icons__task<% if (lection.task != '') { %> b-icons__type_on<% } %>" href="<%= lection.task %>"></a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </li>
+                <% }); %>
+            </ul>
         </script>
      
         <script>
@@ -134,9 +162,16 @@
         var weeks = [
             {
                 dates: {
-                    "15.09.2012" : [0, 1, 2]
+                    "15.09.2012" : [0, 1]
                 },
                 name: "Открытие",
+                meta: ["техологии", "инструменты"]
+            },
+			{
+                dates: {
+                    "22.09.2012" : [2]
+                },
+                name: "Закрытие",
                 meta: ["техологии", "инструменты"]
             }
         ];
@@ -212,7 +247,36 @@
             var Models = {
                 Weeks: new TimeTableModel({name: 'weeks'}),
                 Lections: new TimeTableModel({name: 'lections'}),
-                Lectors: new TimeTableModel({name: 'lectors'})
+                Lectors: new TimeTableModel({name: 'lectors'}),
+				Week: new (Backbone.Model.extend({
+                    defaults: {
+                        id: false,
+                        name: 'lection',
+                        week: {}
+                    },
+                    initialize: function() {
+                        this.bind("change", function(){
+                            if (this.get('id') !== false) {
+                                Views.ViewWeekLections.render(this);
+                            } else {
+                                Views.ViewAllLections.render();
+                            }
+                        });
+                    },
+                    setWeek: function (id) {
+                        var week = Models.Weeks.getById(id);
+                        if (week) {
+                            var params = {id: id};
+                            params[this.get('name')] = week;
+                            this.set(params);
+                            return true;
+                        }
+                        return false;
+                    },
+                    getWeek: function () {
+                        return this.get(this.get('name'));
+                    }
+                }))()
             };
 
             var timetable = $(".b-timetable");
@@ -235,6 +299,20 @@
                             lections: Models.Lections.getAll()
                         })).show();
                     }
+                }))(),
+				ViewWeekLections: new (Backbone.View.extend({
+                    el: timetable,
+                    render: function () {
+                        var week = Models.Week.getWeek();
+                        if (week) {
+                            $(this.el).html(_.template($('.b-lection__week').html(), {
+                                week: week,
+                                lections: Models.Lections.getAll()
+                            })).show();
+                            return true;
+                        }
+                        return false;
+                    }
                 }))()
             };
 
@@ -242,10 +320,15 @@
                 routes: {
                     "": "MainPage",
                     "/": "MainPage",
+					"week/:id": "ShowWeek"
                 },
                 MainPage: function () {
                     Views.ViewTopWeeks.render();
                     Views.ViewAllLections.render();
+                },
+                ShowWeek: function (id) {
+                    Models.Week.setWeek(id);
+                    Views.ViewTopWeeks.render();
                 }
               
             });
