@@ -23,16 +23,21 @@ a:hover
     text-decoration: none;
 }
 
-h3 {
-    font-weight: normal;
-    color: #B0B3B5;
-}
-
 h1 {
-    color: #3FA9F5;
     font-size: 18px;
     font-weight: bold;
+
     margin: 0 15px 0 0;
+
+    line-height: 28px;
+
+    color: #3FA9F5;
+}
+
+h3 {
+    font-weight: normal;
+
+    color: #B0B3B5;
 }
 
 ul {

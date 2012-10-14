@@ -1,29 +1,35 @@
 .b-popup {
-    padding: 15px 30px 25px 30px;
-    background: #34373F;
-    border: 1px solid #000;
-    width: 415px;
-    font: 13px/1.5 Arial, sans-serif;
+    font-size: 13px;
+
     position: absolute;
     top: 200px;
     left: 288px;
     z-index: 100;
+
+    padding: 15px 30px 25px 30px;
+
+    width: 415px;
+
+    line-height: 17px;
+
+    background: #34373F;
+    border: 1px solid #000;
 }
 
 .b-popup a{
     color: #fff;
 
 }
-.b-popup a:hover{
-
-}
 
 .b-popup__close {
+    position: absolute;
+
     display: block;
     width: 26px;
     height: 25px;
-    position: absolute;
-    background: url(b-popup__close.png) no-repeat;
     margin: -30px 0 0 419px;
+
     cursor: pointer;
+
+    background: url(b-popup__close.png) no-repeat;
 }

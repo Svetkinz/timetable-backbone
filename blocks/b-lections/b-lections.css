@@ -4,31 +4,38 @@
 }
 
 .b-lections__day {
-    font: 13px/1.5 Arial, sans-serif;
-    background: #E4ECF1;
+    font-size: 13px;
+
+    position: relative;
+
     display:inline-block;
     _overflow:hidden;
     *zoom:1;
     *display:inline;
     vertical-align: top;
-    padding: 18px;
+
     width: 264px;
-    position: relative;
-    margin: 20px 20px 0 0;
     min-height: 164px;
-    overflow: hidden;
+    padding: 18px;
+    margin: 20px 20px 0 0;
+
+    background: #E4ECF1;
 }
 
 
 .b-lections__link {
-    text-decoration: none;
-    color: #4D5462;
     font-size: 16px;
-    text-shadow: -1px -1px 1px #fff;
+
     display: block;
-    width: 264px;
-    line-height: 18px;
     overflow: hidden;
+
+    width: 264px;
+
+    text-decoration: none;
+    text-shadow: -1px -1px 1px #fff;
+    line-height: 18px;
+
+    color: #4D5462;
 }
 
 .b-lections__link:hover {
@@ -36,11 +43,14 @@
 }
 
 .b-lections__time {
-    text-shadow: none;
     font-size: 13px;
-    padding: 0 18px 0 0;
+
     float: left;
+
+    padding: 0 18px 0 0;
     height: 20px;
+
+    text-shadow: none;
 }
 
 .b-lections__link:hover .b-lections__time {

@@ -1,5 +1,8 @@
 .b-nav {
     height: 50px;
+
+    text-align: center;
+
     border-bottom: 1px solid #4D5462;
     background: #4c5361; /* Old browsers */
     background: #4c5361;
@@ -10,65 +13,78 @@
     background: -ms-linear-gradient(top,  #4c5361 0%,#2f323b 100%);
     background: linear-gradient(to bottom,  #4c5361 0%,#2f323b 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c5361', endColorstr='#2f323b',GradientType=0 );
-    text-align: center;
 }
 
 
 .b-nav__item {
-    font: 13px/1.5 Arial, sans-serif;
+    font-size: 13px;
+
+    position: relative;
+
     display:inline-block;
     _overflow:hidden;
     *zoom:1;
     *display:inline;
     vertical-align: top;
-    position: relative;
+
+    line-height: 17px;
+
     background: url(b-nav__item.png) 180px 22px no-repeat;
 }
 
 .b-nav__item:after {
-    content: '';
-    display: block;
     position: absolute;
-    border-left: 1px solid #002335;
-    border-right: 1px solid #6D7584;
-    height: 50px;
     top: 0;
     right: 0;
+
+    display: block;
+    height: 50px;
+
+    content: '';
+
+    border-left: 1px solid #002335;
+    border-right: 1px solid #6D7584;
 }
 
 .b-nav__item_pos_last:after {
     border: none;
 }
 
-
-
-
 .b-nav__link {
-    color: #fff;
     font-size: 22px;
+
+    display: block;
+    width: 200px;
+    padding: 0 0 0 40px;
+
     line-height: 50px;
     text-decoration: none;
     text-shadow: -1px -1px 1px #000;
-    width: 200px;
-    display: block;
-    padding: 0 0 0 40px;
-    display: block;
+
+    color: #fff;
 }
 
 .b-nav__link:hover {
-    color: #fff;
     text-shadow: none;
+
+    color: #fff;
 }
 
 .b-nav__list {
-    margin: 0;
-    font: 0/0 Arial, sans-serif;
+    font-size: 0;
+
     text-align: left;
     display:inline-block;
     _overflow:hidden;
     *zoom:1;
     *display:inline;
     vertical-align: top;
-}.b-nav__item:hover .b-week{
+
+    margin: 0;
+
+    line-height: 0;
+}
+
+.b-nav__item:hover .b-week{
      display: block;
  }
