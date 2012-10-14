@@ -497,6 +497,22 @@
                     }
                     return true;
                 });
+				$('.b-edit__ico').live('click', function () {
+                    $(this).prev('.b-edit__value').show().focus();
+                    $(this).prevAll('a').find('.b-edit__label').hide();
+                });
+                $('.b-edit__value').live('focusout', function () {
+                    var element = $(this);
+                    element.hide();
+                    var key = element.closest('.b-edit').data('type');
+                    Models.Lection.update(key, element.val());
+                });
+                $(".b-update__enter").live("click", function() {
+                    $(this).hide();
+                    $(".b-update__block").show();
+                    $(".b-update__text").val('').focus();
+                    return false;
+                });
 			});
            
         </script>
