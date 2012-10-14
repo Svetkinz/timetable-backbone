@@ -1,62 +1,75 @@
 .b-nav {
-	display: none;
+    display: none;
 }
 
 h1 {
-	font-size: 20px;
+    font-size: 20px;
 }
 
 .b-icons {
-	display: none;
+    display: none;
 }
 
 .b-lections__day {
-	background: #E4ECF1;
-    display: block;
-    font: 14px/1.5 Arial,sans-serif;
-    height: auto;
-    margin: 10px 0 0 0;
+    font-size: 14px;
+
     position: relative;
+
+    display: block;
     width: auto;
-	padding: 6px;
+    min-height: 20px;
+    margin: 10px 0 0 0;
+    padding: 6px;
+
+    line-height: 17px;
+
+    background: #E4ECF1;
 }
 
 .b-lections-date{
+    position: relative;
+    right: 0;
+
     float: left;
     height: 43px;
     margin: 0 20px;
-    position: relative;
-    right: 0;
     width: 100px;
 }
 
 .b-lections-date__date{
     font-size: 30px;
+
     position: absolute;
     right: 0;
 }
 
 .b-lections-date__month {
-	font-size: 14px;
+    font-size: 14px;
+
     left: 0;
     position: absolute;
     top: 20px;
 }
 
 .b-lections-date__day {
-	bottom: 20px;
     font-size: 11px;
+
+    bottom: 20px;
     left: 0;
 }
 
 .b-lections__lector {
-	display:inline-block;
-	_overflow:hidden;
-	*zoom:1;
-	*display:inline;
-	vertical-align: top;	
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: top;
 }
 
 .b-lections__link {
-	width: auto;
+    width: auto;
+}
+
+.b-update {
+    display: none;
 }

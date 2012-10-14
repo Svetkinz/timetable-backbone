@@ -136,7 +136,7 @@
         ];
         localStorage.lectors = JSON.stringify(lectors);
 
-        var lections = [
+        var lectionsdata = [
             {
                 "time" : "12:00",
                 "name" : "Общий цикл",
@@ -326,7 +326,7 @@
             }
         ];
 
-        localStorage.lections = JSON.stringify(lections);
+        localStorage.lections = JSON.stringify(lectionsdata);
 
         var weeks = [
             {
@@ -426,10 +426,11 @@
                             <div class="b-lections-date"><%= GetTextDate(day, 'lectionsDate') %></div><span class="b-lections__meta"></span>
                             <% _.each(dayLections, function (lectionId) { %>
                                 <% var lection = lections[lectionId]; %>
+                                <% var lector = lectors[lection.lector] %>
                                 <div class="b-lections__lection">
                                     <a href="#show/<%= lectionId %>" class="b-lections__link b-open__lection">
                                         <span class="b-lections__time"><%= lection.time %></span>
-                                        <%= lection.name %> <span class="b-lections__lector"></span>
+                                        <%= lection.name %> <span class="b-lections__lector"> (<%= lector.name %>)</span>
                                     </a>
                                     <div class="b-icons">
                                         <a class="b-icons__link b-icons__video<% if (lection.video != '') { %> b-icons__type_on<% } %>" href="<%= lection.video %>"></a>
@@ -456,10 +457,11 @@
                     <span class="b-lections__meta"></span>
                     <% _.each(dayLections, function (lectionId) { %>
                         <% var lection = lections[lectionId]; %>
+                        <% var lector = lectors[lection.lector] %>
                         <div class="b-lections__lection">
                             <a href="#show/<%= lectionId %>" class="b-lections__link b-open__lection">
                                 <span class="b-lections__time"><%= lection.time %></span>
-                                <%= lection.name %> <span class="b-lections__lector"></span>
+                                <%= lection.name %> <span class="b-lections__lector"> (<%= lector.name %>)</span>
                             </a>
                             <div class="b-icons">
                                 <a class="b-icons__link b-icons__video<% if (lection.video != '') { %> b-icons__type_on<% } %>" href="<%= lection.video %>"></a>
@@ -737,7 +739,6 @@
                             Views.ViewAllLections.render();
                         }
                         return true;
-                        return true;
                     }
                 }))()
             };
@@ -770,7 +771,8 @@
                     render: function () {
                         $(this.el).html(_.template($('.b-lection__list').html(), {
                             weeks: Models.Weeks.getAll(),
-                            lections: Models.Lections.getAll()
+                            lections: Models.Lections.getAll(),
+                            lectors: Models.Lectors.getAll()
                         })).show();
                     }
                 }))(),
@@ -790,7 +792,8 @@
                         if (week) {
                             $(this.el).html(_.template($('.b-lection__week').html(), {
                                 week: week,
-                                lections: Models.Lections.getAll()
+                                lections: Models.Lections.getAll(),
+                                lectors: Models.Lectors.getAll()
                             })).show();
                             return true;
                         }
