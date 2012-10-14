@@ -1,335 +1,330 @@
-﻿{"lectors":[{
-		"name" : "Михаил Трошев",
-		"photo" : "http://img-fotki.yandex.ru/get/6610/16051756.0/0_a5ee8_af749073_L",
-		"link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77"
-		},
-		{
-		"name" : "Сергей Бережной",
-		"photo" : "http://img-fotki.yandex.ru/get/6413/16051756.0/0_a5ee9_e1a181e7_M",
-		"link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
-		},
-		{
-		"name" : "Виктор Ашик",
-		"photo" : "http://avatars.yandex.net/get-avatar/103345/1194908534023-normal",
-		"link" : "http://vashik.ya.ru/"
-		},
-		{
-		"name" : "Вячеслав Олиянчук",
-		"photo" : "http://img-fotki.yandex.ru/get/5605/miripiruni.0/0_727f7_90d798f3_L",
-		"link" : "http://miripiruni.ya.ru/"
-		},
-		{
-		"name" : "Георгий Мостоловица",
-		"photo" : "http://img-fotki.yandex.ru/get/4003/gfranco.3/0_33d7f_fbc9803e_M",
-		"link" : "http://gfranco.ya.ru/"
-		},
-		{
-		"name" : "Сергей Сергеев",
-		"photo" : "http://img-fotki.yandex.ru/get/6305/24969369.17/0_7f71f_571f11b4_M?log_nocount=64720402854",
-		"link" : "http://gurugray.ya.ru/"
-		},
-		{
-		"name" : "Марина Широчкина",
-		"photo" : "http://moikrug.ru/img/3410/person_BigRound/195533509.jpg?modified=1349661754",
-		"link" : "http://pancakyes.ya.ru/"
-		},
-		{
-		"name" : "Павел Пушкарев",
-		"photo" : "http://moikrug.ru/img/3011/person_Portrait/562433474.jpg?modified=1348684201",
-		"link" : "http://paulus.moikrug.ru/"
-		},
-		{
-		"name" : "Алексей Бережной",
-		"photo" : "http://moikrug.ru/img/3912/person_Portrait/859747808.jpg?modified=1328695610",
-		"link" : "http://berezhnoy-aleksey.moikrug.ru/"
-		},
-		{
-		"name" : "Сергей Пузанков",
-		"photo" : "http://moikrug.ru/img/3409/person_Portrait/212902874.jpg?modified=1308231025",
-		"link" : "http://sergeypuzankov.moikrug.ru/"
-		},
-		{
-		"name" : "Роман Комаров",
-		"photo" : "http://avatars.yandex.net/get-avatar/1076905/2d6a0b2c6065e51eb2dc67eabac03357.6501-normal",
-		"link" : "http://kizmarh.ya.ru/"
-		},
-		{
-		"name" : "Егор Львовский",
-		"photo" : "http://moikrug.ru/img/6604/person_Portrait/668323964.jpg?modified=1346584974",
-		"link" : "http://lvivski.ya.ru/"
-		},
-		{
-		"name" : "Тарас Иващенко",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Алексей Воинов",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Михаил Давыдов",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Алексей Андросов",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Иван Карев",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Михаил Корепанов",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Максим Ширшин",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Михаил Трошев",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Владимир Варанкин",
-		"photo" : "",
-		"link" : ""
-		},
-		{
-		"name" : "Константин Горский",
-		"photo" : "",
-		"link" : ""
-		}		
-	],
-"lections": 
-		[	
-			{
-				"time" : "12:00",
-				"name" : "Общий цикл разработки",
-				"lector" : "0",
-				"video" : "http://yadi.sk/d/Lr0Y4WO606jTc",
-				"ppt" : "http://yadi.sk/d/VDsJ4ZUBiq6u",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=35",
-				"descr" : ""
-			},
-			{
-				"time" : "13:00",
-				"name" : "Task Tracker",
-				"lector" : "1",
-				"video" : "http://yadi.sk/d/D5xTwoIciq6c",
-				"ppt" : "",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=37",
-				"descr" : "Системы ведения задач"
-			},
-			{
-				"time" : "14:00",
-				"name" : "Wiki",
-				"lector" : "1",
-				"video" : "",
-				"ppt" : "http://yadi.sk/d/7F9PuECdiq6G",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=40",
-				"descr" : ""
-			},
-			{
-				"time" : "19:00",
-				"name" : "Командная строка Unix",
-				"lector" : "2",
-				"video" : "http://yadi.sk/d/O5OBYxHwnGTw",
-				"ppt" : "http://yadi.sk/d/3N0d6h9rlRA8",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=116",
-				"descr" : ""
-			},
-			{
-				"time" : "20:00",
-				"name" : "Редакторы кода",
-				"lector" : "3",
-				"video" : "http://yadi.sk/d/f3CYmlG3nGSC",
-				"ppt" : "https://github.com/yandex-shri/lectures/blob/master/05-editors.md",
-				"task" : "",
-				"github" : "https://github.com/yandex-shri/lectures/blob/master/05-editors.md",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=118",
-				"descr" : ""
-			},
-			{
-				"time" : "19:00",
-				"name" : "Браузеры",
-				"lector" : "4",
-				"video" : "http://yadi.sk/d/NMOTG5lEqZdM",
-				"ppt" : "http://yadi.sk/d/-VjNYqjTqTca",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=171",
-				"descr" : ""
-			},
-			{
-				"time" : "20:00",
-				"name" : "Системы контроля версий ",
-				"lector" : "5",
-				"video" : "http://yadi.sk/d/Ujsir9QwqZeA",
-				"ppt" : "http://yadi.sk/d/a7aY8YXjr-hs",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=173",
-				"descr" : ""
-			},
-			{
-				"time" : "12:00",
-				"name" : "Тестирование",
-				"lector" : "6",
-				"video" : "http://yadi.sk/d/oNwA5A9NqZcc",
-				"ppt" : "http://yadi.sk/d/W7lDOetHqTWC",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=260",
-				"descr" : ""
-			},
-			{
-				"time" : "13:00",
-				"name" : "Развертывание верстки",
-				"lector" : "7",
-				"video" : "http://yadi.sk/d/7DVNQDK9qZbq",
-				"ppt" : "http://yadi.sk/d/N4FYrhS3qTSI",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=261",
-				"descr" : ""
-			},
-			{
-				"time" : "14:00",
-				"name" : "HTTP-протокол",
-				"lector" : "8",
-				"video" : "http://yadi.sk/d/Tr1gzBsOqZao",
-				"ppt" : "http://yadi.sk/d/waP8x8maqTKM",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=262",
-				"descr" : ""
-			},
-			{
-				"time" : "18:00",
-				"name" : "XML",
-				"lector" : "9",
-				"video" : "http://yadi.sk/d/LyYgXl_C0-6oI",
-				"ppt" : "http://yadi.sk/d/PLpXM88frhSW",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404",
-				"descr" : ""
-			},
-			{
-				"time" : "19:00",
-				"name" : "XPath",
-				"lector" : "9",
-				"video" : "http://yadi.sk/d/cTZ1D0UU0-6v6",
-				"ppt" : "http://yadi.sk/d/PLpXM88frhSW",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404",
-				"descr" : ""
-			},
-			{
-				"time" : "20:00",
-				"name" : "XSLT",
-				"lector" : "9",
-				"video" : "http://yadi.sk/d/0KxriIDd0-7Ni",
-				"ppt" : "http://yadi.sk/d/PLpXM88frhSW",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404",
-				"descr" : ""
-			},
-			{
-				"time" : "19:00",
-				"name" : "Механизм работы браузера",
-				"lector" : "10",
-				"video" : "",
-				"ppt" : "http://yadi.sk/d/wo1LfOGatbOM",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=492",
-				"descr" : ""
-			},
-			{
-				"time" : "20:00",
-				"name" : "Кеширование на клиенте и сервере",
-				"lector" : "11",
-				"video" : "http://yadi.sk/d/vTmZ5k1a0-74y",
-				"ppt" : "http://yadi.sk/d/EEEp53YstbNo",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=493",
-				"descr" : ""
-			},
-			{
-				"time" : "19:00",
-				"name" : "Безопасность веб-приложений",
-				"lector" : "12",
-				"video" : "",
-				"ppt" : "http://yadi.sk/d/bo1OpD2Av3vC",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=548",
-				"descr" : ""
-			},
-			{
-				"time" : "20:00",
-				"name" : "Языки программирования ",
-				"lector" : "13",
-				"video" : "",
-				"ppt" : "http://yadi.sk/d/LRpqvLuIv4UI",
-				"task" : "",
-				"github" : "",
-				"club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=549",
-				"descr" : ""
-			}			
-		],	
+﻿{"lectors" : [
+            {
+                "name" : "Михаил Трошев",
+                "photo" : "http://img-fotki.yandex.ru/get/6610/16051756.0/0_a5ee8_af749073_L",
+                "link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77"
+            },
+            {
+                "name" : "Сергей Бережной",
+                "photo" : "http://img-fotki.yandex.ru/get/6413/16051756.0/0_a5ee9_e1a181e7_M",
+                "link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
+            },
+            {
+                "name" : "Виктор Ашик",
+                "photo" : "http://avatars.yandex.net/get-avatar/103345/1194908534023-normal",
+                "link" : "http://vashik.ya.ru/"
+            },
+            {
+                "name" : "Вячеслав Олиянчук",
+                "photo" : "http://img-fotki.yandex.ru/get/5605/miripiruni.0/0_727f7_90d798f3_L",
+                "link" : "http://miripiruni.ya.ru/"
+            },
+            {
+                "name" : "Георгий Мостоловица",
+                "photo" : "http://img-fotki.yandex.ru/get/4003/gfranco.3/0_33d7f_fbc9803e_M",
+                "link" : "http://gfranco.ya.ru/"
+            },
+            {
+                "name" : "Сергей Сергеев",
+                "photo" : "http://img-fotki.yandex.ru/get/6305/24969369.17/0_7f71f_571f11b4_M?log_nocount=64720402854",
+                "link" : "http://gurugray.ya.ru/"
+            },
+            {
+                "name" : "Марина Широчкина",
+                "photo" : "http://moikrug.ru/img/3410/person_BigRound/195533509.jpg?modified=1349661754",
+                "link" : "http://pancakyes.ya.ru/"
+            },
+            {
+                "name" : "Павел Пушкарев",
+                "photo" : "http://moikrug.ru/img/3011/person_Portrait/562433474.jpg?modified=1348684201",
+                "link" : "http://paulus.moikrug.ru/"
+            },
+            {
+                "name" : "Алексей Бережной",
+                "photo" : "http://moikrug.ru/img/3912/person_Portrait/859747808.jpg?modified=1328695610",
+                "link" : "http://berezhnoy-aleksey.moikrug.ru/"
+            },
+            {
+                "name" : "Сергей Пузанков",
+                "photo" : "http://moikrug.ru/img/3409/person_Portrait/212902874.jpg?modified=1308231025",
+                "link" : "http://sergeypuzankov.moikrug.ru/"
+            },
+            {
+                "name" : "Роман Комаров",
+                "photo" : "http://avatars.yandex.net/get-avatar/1076905/2d6a0b2c6065e51eb2dc67eabac03357.6501-normal",
+                "link" : "http://kizmarh.ya.ru/"
+            },
+            {
+                "name" : "Егор Львовский",
+                "photo" : "http://moikrug.ru/img/6604/person_Portrait/668323964.jpg?modified=1346584974",
+                "link" : "http://lvivski.ya.ru/"
+            },
+            {
+                "name" : "Тарас Иващенко",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Алексей Воинов",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Михаил Давыдов",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Алексей Андросов",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Иван Карев",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Михаил Корепанов",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Максим Ширшин",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Михаил Трошев",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Владимир Варанкин",
+                "photo" : "",
+                "link" : ""
+            },
+            {
+                "name" : "Константин Горский",
+                "photo" : "",
+                "link" : ""
+            }
+        ],
+"lectionsdata" : [
+            {
+                "time" : "12:00",
+                "name" : "Общий цикл разработки",
+                "lector" : "0",
+                "video" : "http://yadi.sk/d/Lr0Y4WO606jTc",
+                "ppt" : "http://yadi.sk/d/VDsJ4ZUBiq6u",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=35",
+                "descr" : ""
+            },
+            {
+                "time" : "13:00",
+                "name" : "Task Tracker",
+                "lector" : "1",
+                "video" : "http://yadi.sk/d/D5xTwoIciq6c",
+                "ppt" : "",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=37",
+                "descr" : "Системы ведения задач"
+            },
+            {
+                "time" : "14:00",
+                "name" : "Wiki",
+                "lector" : "1",
+                "video" : "",
+                "ppt" : "http://yadi.sk/d/7F9PuECdiq6G",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=40",
+                "descr" : ""
+            },
+            {
+                "time" : "19:00",
+                "name" : "Командная строка Unix",
+                "lector" : "2",
+                "video" : "http://yadi.sk/d/O5OBYxHwnGTw",
+                "ppt" : "http://yadi.sk/d/3N0d6h9rlRA8",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=116",
+                "descr" : ""
+            },
+            {
+                "time" : "20:00",
+                "name" : "Редакторы кода",
+                "lector" : "3",
+                "video" : "http://yadi.sk/d/f3CYmlG3nGSC",
+                "ppt" : "https://github.com/yandex-shri/lectures/blob/master/05-editors.md",
+                "task" : "",
+                "github" : "https://github.com/yandex-shri/lectures/blob/master/05-editors.md",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=118",
+                "descr" : ""
+            },
+            {
+                "time" : "19:00",
+                "name" : "Браузеры",
+                "lector" : "4",
+                "video" : "http://yadi.sk/d/NMOTG5lEqZdM",
+                "ppt" : "http://yadi.sk/d/-VjNYqjTqTca",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=171",
+                "descr" : ""
+            },
+            {
+                "time" : "20:00",
+                "name" : "Системы контроля версий ",
+                "lector" : "5",
+                "video" : "http://yadi.sk/d/Ujsir9QwqZeA",
+                "ppt" : "http://yadi.sk/d/a7aY8YXjr-hs",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=173",
+                "descr" : ""
+            },
+            {
+                "time" : "12:00",
+                "name" : "Тестирование",
+                "lector" : "6",
+                "video" : "http://yadi.sk/d/oNwA5A9NqZcc",
+                "ppt" : "http://yadi.sk/d/W7lDOetHqTWC",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=260",
+                "descr" : ""
+            },
+            {
+                "time" : "13:00",
+                "name" : "Развертывание верстки",
+                "lector" : "7",
+                "video" : "http://yadi.sk/d/7DVNQDK9qZbq",
+                "ppt" : "http://yadi.sk/d/N4FYrhS3qTSI",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=261",
+                "descr" : ""
+            },
+            {
+                "time" : "14:00",
+                "name" : "HTTP-протокол",
+                "lector" : "8",
+                "video" : "http://yadi.sk/d/Tr1gzBsOqZao",
+                "ppt" : "http://yadi.sk/d/waP8x8maqTKM",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=262",
+                "descr" : ""
+            },
+            {
+                "time" : "18:00",
+                "name" : "XML",
+                "lector" : "9",
+                "video" : "http://yadi.sk/d/LyYgXl_C0-6oI",
+                "ppt" : "http://yadi.sk/d/PLpXM88frhSW",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404",
+                "descr" : ""
+            },
+            {
+                "time" : "19:00",
+                "name" : "XPath",
+                "lector" : "9",
+                "video" : "http://yadi.sk/d/cTZ1D0UU0-6v6",
+                "ppt" : "http://yadi.sk/d/PLpXM88frhSW",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404",
+                "descr" : ""
+            },
+            {
+                "time" : "20:00",
+                "name" : "XSLT",
+                "lector" : "9",
+                "video" : "http://yadi.sk/d/0KxriIDd0-7Ni",
+                "ppt" : "http://yadi.sk/d/PLpXM88frhSW",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404",
+                "descr" : ""
+            },
+            {
+                "time" : "19:00",
+                "name" : "Механизм работы браузера",
+                "lector" : "10",
+                "video" : "",
+                "ppt" : "http://yadi.sk/d/wo1LfOGatbOM",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=492",
+                "descr" : ""
+            },
+            {
+                "time" : "20:00",
+                "name" : "Кеширование на клиенте и сервере",
+                "lector" : "11",
+                "video" : "http://yadi.sk/d/vTmZ5k1a0-74y",
+                "ppt" : "http://yadi.sk/d/EEEp53YstbNo",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=493",
+                "descr" : ""
+            },
+            {
+                "time" : "19:00",
+                "name" : "Безопасность веб-приложений",
+                "lector" : "12",
+                "video" : "",
+                "ppt" : "http://yadi.sk/d/bo1OpD2Av3vC",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=548",
+                "descr" : ""
+            },
+            {
+                "time" : "20:00",
+                "name" : "Языки программирования ",
+                "lector" : "13",
+                "video" : "",
+                "ppt" : "http://yadi.sk/d/LRpqvLuIv4UI",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=549",
+                "descr" : ""
+            }
+        ],
 		
-"weeksDescriptions": [
-        {
-            "name" : "Открытие",
-            "meta" : ["техологии", "инструменты"]
-		},
-        {
-            "name" : "1 неделя",
-            "meta" : ["инстурменты", "инструменты"]
-        },
-        {
-            "name" : "2 неделя",
-            "meta" : ["инстурменты", "инструменты"]
-        },
-        {
-            "name" : "3 неделя",
-            "meta" : ["инстурменты", "инструменты"]
-        }
-    ],
-"weeks": [
-		{
-		"15.09.2012" : [0, 1, 2]
-		},
-		{
-		"18.09.2012" : [3, 4],
-		"20.09.2012" : [5, 6],
-		"22.09.2012" : [7, 8, 9]
-		},
-		{
-		"24.09.2012" : [10, 11, 12],
-		"25.09.2012" : [13, 14],
-		"27.09.2012" : [15, 16]
-		}
-	]}
+"weeks" : [
+            {
+                dates: {
+                    "15.09.2012" : [0, 1, 2]
+                },
+                name: "Открытие",
+                meta: ["инструменты"]
+            },
+            {
+                dates: {
+                    "18.09.2012" : [3, 4],
+                    "20.09.2012" : [5, 6],
+                    "22.09.2012" : [7, 8, 9]
+                },
+                name: "1 неделя",
+                meta: ["техологии", "инструменты"]
+            },
+            {
+                dates: {
+                    "24.09.2012" : [10, 11, 12],
+                    "25.09.2012" : [13, 14],
+                    "27.09.2012" : [15, 16]
+                },
+                name: "2 неделя",
+                meta: ["техологии", "языки"]
+            }
+        ]
+}
