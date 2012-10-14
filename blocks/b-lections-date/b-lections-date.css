@@ -1,0 +1,25 @@
+.b-lections-date {
+    position: absolute;
+    color: #B8BFC6;
+    right: 18px;
+    bottom: -3px;
+}
+
+.b-lections-date__day {
+    font-size: 12px;
+    color: #8C929C;
+    position: absolute;
+    right: 62px;
+    bottom: 38px;
+}
+
+.b-lections-date__month {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.b-lections-date__date {
+    font-size: 50px;
+    font-weight: bold;
+
+}

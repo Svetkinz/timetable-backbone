@@ -1,0 +1,46 @@
+.b-lection {
+    color: #fff;
+}
+
+.b-lection__name {
+    color: #fff;
+    text-shadow: -1px -1px 1px #000;
+    font-weight: normal;
+    font-size: 22px;
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: middle;
+
+}
+
+.b-lection__descr {
+    width: 290px;
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: top;
+    margin: 0 10px 0 0;
+}
+
+.b-lection__date {
+    font-size: 14px;
+    color: #6F7683;
+    text-shadow: -1px -1px 1px #000;
+}
+
+
+.b-lection__link {
+    line-height: 22px;
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: top;
+    padding: 0 0 0 30px;
+    text-decoration: none;
+    border: none !important;
+    min-height: 22px;
+}

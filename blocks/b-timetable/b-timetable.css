@@ -1,0 +1,21 @@
+
+.b-timetable {
+    width: 960px;
+    margin: 0 auto;
+    padding: 30px 0;
+    position: relative;
+}
+
+.b-timetable__meta {
+    font-size: 12px;
+    color: #B8BFC6;
+}
+
+.b-timetable__weekname {
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: middle;
+
+}

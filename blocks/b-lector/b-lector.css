@@ -1,0 +1,18 @@
+.b-lector__img {
+    max-width: 107px;
+    max-height: 133px;
+}
+
+
+.b-lector {
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: top;
+    width: 110px;
+}
+
+.b-lector__name {
+    padding: 0 10px 0 0;
+}

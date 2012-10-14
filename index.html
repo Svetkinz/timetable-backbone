@@ -1,0 +1,260 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Распиcание лекций Школы Разработки Интерфейсов</title>
+    <meta name="description" content="Распиcание лекций Школы Разработки Интерфейсов">
+    <meta name="keywords" content="распиcание, ШРИ">
+    <meta name="author" content="Лукьянчук С.В.">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+        <title>Backbone</title>
+        <script src="js/jquery.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script src="js/date-ru-RU.js"></script>
+    </head>
+    <body>
+        <div class="b-nav"></div>
+        <div class="b-timetable">
+
+        </div>
+        <div class="b-popup" style="display: none;">
+            <i class="b-popup__close"></i>
+            <div class="b-lection" data-id="id">
+
+            </div>
+        </div>
+
+        <script type="text/template" class="b-weeks__list">
+            <ul class="b-nav__list">
+                <% _.each(weeks, function (week, index) { %>
+                    <li class="b-nav__item">
+                        <a href="#" class="b-nav__link"><%= week.name %></a>
+                        <div class="b-week">
+                            <ul class="b-week__list">
+                                <% _.each(week.dates, function (lectionsList, day) { %>
+                                    <% _.each(lectionsList, function (lectionId) { %>
+                                        <li class="b-week__item"><a href="#" class="b-week__link b-open__lection" data-id="<%= lectionId %>"><span class="b-week__date"><%= GetTextDate(day, 'weeksDate') %></span> <%= lections[lectionId].name %></a></li>
+                                    <% }); %>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </script>
+
+        <script type="text/template" class="b-lection__list">
+            <% _.each(weeks, function (week) { %>
+                <h1 class="b-timetable__weekname"><%= week.name %></h1>
+                <% _.each(week.meta, function (meta) { %>
+                    <span class="b-timetable__meta"><%= meta %></span>
+                <% }); %>
+                <ul class="b-lections">
+                    <% _.each(week.dates, function (dayLections, day) { %>
+                        <li class="b-lections__day">
+                            <div class="b-lections-date"><%= GetTextDate(day, 'lectionsDate') %></div><span class="b-lections__meta"></span>
+                            <% _.each(dayLections, function (lectionId) { %>
+                                <% var lection = lections[lectionId]; %>
+                                <div class="b-lections__lection">
+                                    <a href="" class="b-lections__link b-open__lection">
+                                        <span class="b-lections__time"><%= lection.time %></span>
+                                        <%= lection.name %> <span class="b-lections__lector"></span>
+                                    </a>
+                                    <div class="b-icons">
+                                        <a class="b-icons__link b-icons__video<% if (lection.video != '') { %> b-icons__type_on<% } %>" href="<%= lection.video %>"></a>
+                                        <a class="b-icons__link b-icons__ppt<% if (lection.ppt != '') { %> b-icons__type_on<% } %>" href="<%= lection.ppt %>"></a>
+                                        <a class="b-icons__link b-icons__task<% if (lection.task != '') { %> b-icons__type_on<% } %>" href="<%= lection.task %>"></a>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% }); %>
+        </script>
+     
+        <script>
+
+        var lectors = [
+            {
+                "name" : "Михаил Трошев",
+                "photo" : "http://img-fotki.yandex.ru/get/6610/16051756.0/0_a5ee8_af749073_L",
+                "link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77",
+            },
+            {
+                "name" : "Сергей Бережной",
+                "photo" : "http://img-fotki.yandex.ru/get/6413/16051756.0/0_a5ee9_e1a181e7_M",
+                "link" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
+            }
+        ];
+        localStorage.lectors = JSON.stringify(lectors, "", 4);
+
+        var lectionsdata = [
+            {
+                "time" : "12:00",
+                "name" : "Общий цикл разработки",
+                "lector" : "0",
+                "video" : "http://yadi.sk/d/Lr0Y4WO606jTc",
+                "ppt" : "http://yadi.sk/d/VDsJ4ZUBiq6u",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=35",
+                "descr" : ""
+            },
+            {
+                "time" : "13:00",
+                "name" : "Task Tracker",
+                "lector" : "1",
+                "video" : "http://yadi.sk/d/D5xTwoIciq6c",
+                "ppt" : "",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=37",
+                "descr" : "Системы ведения задач"
+            },
+            {
+                "time" : "14:00",
+                "name" : "Wiki",
+                "lector" : "1",
+                "video" : "",
+                "ppt" : "http://yadi.sk/d/7F9PuECdiq6G",
+                "task" : "",
+                "github" : "",
+                "club" : "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=40",
+                "descr" : ""
+            }
+        ];
+
+        localStorage.lections = JSON.stringify(lectionsdata, "", 4);
+
+        var weeks = [
+            {
+                dates: {
+                    "15.09.2012" : [0, 1, 2]
+                },
+                name: "Открытие",
+                meta: ["техологии", "инструменты"]
+            }
+        ];
+
+        localStorage.weeks = JSON.stringify(weeks, "", 4);
+
+
+            var months = ['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+            var weekDays = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
+            var weekDaysShrt = ['вс','пн','вт','ср','чт','пт','сб'];
+
+            var GetTextDate = function (day, format) {
+                var date = Date.parse(day);
+
+                switch (format) {
+                    case "weeksDate":
+                        var dayNumber = date.getDate();
+                        var monthNumber = date.getMonth()+1;
+                        if (monthNumber < 10) {
+                            monthNumber = '0'+monthNumber;
+                        }
+                        var dayWeekText = weekDaysShrt[date.getDay()];
+                        return dayNumber+'.'+monthNumber+' '+dayWeekText;
+
+                    case "lectionsDate":
+                        var dayNumber = date.getDate();
+                        var monthText = months[date.getMonth()+1];
+                        var dayWeekText = weekDays[date.getDay()];
+                        return '<span class="b-lections-date__day">'+dayWeekText+'</span><span class="b-lections-date__month">'+monthText+'</span><span class="b-lections-date__date">'+dayNumber+'</span>';
+
+                    case "lectionDate":
+                        var dayNumber = date.getDate();
+                        var monthNumber = date.getMonth()+1;
+                        if (monthNumber < 10) {
+                            monthNumber = '0'+monthNumber;
+                        }
+                        var dayWeekText = weekDays[date.getDay()];
+                        return dayNumber+'.'+monthNumber+' '+dayWeekText;
+
+                }
+
+                return '';
+            }
+
+            var TimeTableModel = Backbone.Model.extend({
+                defaults: {
+                    name: ''
+                },
+                initialize: function() {
+                    this.set(this.get('name'), JSON.parse(localStorage[this.get('name')]));
+                },
+                idExists: function (id) {
+                    return id < this.get(this.get('name')).length;
+                },
+                getById: function (id) {
+                    if (this.idExists(id)) {
+                        return this.get(this.get('name'))[id];
+                    }
+                    return false;
+                },
+                getAll: function () {
+                    return this.get(this.get('name'));
+                },
+                replace: function (id, value) {
+                    var values = this.get(this.get('name'));
+                    if (typeof(values[id]) != 'undefined') {
+                        values[id] = value;
+                        this.set(this.get('name'), values);
+                    }
+                }
+            });
+
+            var Models = {
+                Weeks: new TimeTableModel({name: 'weeks'}),
+                Lections: new TimeTableModel({name: 'lections'}),
+                Lectors: new TimeTableModel({name: 'lectors'})
+            };
+
+            var timetable = $(".b-timetable");
+
+            Views = {
+                ViewAllLections: new (Backbone.View.extend({
+                    el: timetable,
+                    render: function () {
+                        $(this.el).html(_.template($('.b-lection__list').html(), {
+                            weeks: Models.Weeks.getAll(),
+                            lections: Models.Lections.getAll()
+                        })).show();
+                    }
+                }))(),
+                ViewTopWeeks: new (Backbone.View.extend({
+                    el: $(".b-nav"),
+                    render: function () {
+                        $(this.el).html(_.template($('.b-weeks__list').html(), {
+                            weeks: Models.Weeks.getAll(),
+                            lections: Models.Lections.getAll()
+                        })).show();
+                    }
+                }))()
+            };
+
+            var Controller = Backbone.Router.extend({
+                routes: {
+                    "": "MainPage",
+                    "/": "MainPage",
+                },
+                MainPage: function () {
+                    Views.ViewTopWeeks.render();
+                    Views.ViewAllLections.render();
+                }
+              
+            });
+
+            var controller = new Controller(); // Создаём контроллер
+            Backbone.history.start();  // Запускаем HTML5 History push
+
+           
+        </script>
+
+    </body>
+</html>

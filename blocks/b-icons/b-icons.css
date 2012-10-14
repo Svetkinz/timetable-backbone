@@ -1,0 +1,52 @@
+.b-icons {
+    margin: 0 0 8px 47px;
+}
+
+.b-icons__link {
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    cursor: default;
+}
+
+
+.b-icons__video {
+    background: url(b-icons__video.png) 0 -25px no-repeat;
+}
+
+.b-popup .b-icons__video {
+    padding: 0 0 0 30px;
+}
+
+.b-icons__ppt {
+    background: url(b-icons__ppt.png) 0 -25px no-repeat;
+}
+
+.b-icons__task {
+    background: url(b-icons__task.png) 0 -25px no-repeat;
+}
+
+.b-icons__github {
+    background: url(b-icons__github.png) 0 -25px no-repeat;
+}
+
+.b-icons__descr{
+    background: url(b-icons__descr.png) 0 -25px no-repeat;
+}
+
+.b-icons__club{
+    background: url(b-icons__club.png) 0 -25px no-repeat;
+}
+
+.b-icons__type_on{
+    background-position: 0 0;
+    cursor: pointer;
+}
+
+.b-icons__type_on:hover {
+    opacity: 0.7;
+}

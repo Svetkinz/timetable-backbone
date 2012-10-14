@@ -1,0 +1,36 @@
+.b-edit {
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: top;
+    position: relative;
+}
+
+.b-edit__ico {
+    width: 19px;
+    height: 19px;
+    display: none;
+    background: url(b-edit__ico.png) no-repeat;
+    margin: 2px 0 0 10px;
+    opacity: 0.3;
+    cursor: pointer;
+    right: -22px;
+}
+
+.b-edit:hover .b-edit__ico {
+    display:inline-block;
+    _overflow:hidden;
+    *zoom:1;
+    *display:inline;
+    vertical-align: middle;
+}
+
+.b-edit__ico:hover {
+    opacity: 1;
+}
+
+.b-edit__value {
+    width: 150px;
+    color: #333;
+}

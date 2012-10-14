@@ -1,0 +1,37 @@
+.b-week {
+    background: #34373F;
+    border-bottom: 1px solid #4D5462;
+    border-left: 1px solid #4D5462;
+    border-right: 1px solid #4D5462;
+    font: 15px/20px Arial, sans-serif;
+    padding: 16px 9px;
+    width: 260px;
+    position: absolute;
+    display: none;
+    z-index: 100;
+}
+
+.b-week__date {
+    color: #6F7683;
+    font-size: 12px;
+    padding: 0 12px 0 0;
+    float: left;
+    height: 21px;
+}
+
+.b-week__item {
+    margin: 0 0 10px 0;
+}
+
+.b-week__link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.b-week__link:hover {
+    color: #3FA9F5;
+}
+
+.b-nav__item:hover .b-week{
+    display: block;
+}
