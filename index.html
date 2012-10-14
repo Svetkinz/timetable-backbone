@@ -37,7 +37,7 @@
                             <ul class="b-week__list">
                                 <% _.each(week.dates, function (lectionsList, day) { %>
                                     <% _.each(lectionsList, function (lectionId) { %>
-                                        <li class="b-week__item"><a href="#" class="b-week__link b-open__lection" data-id="<%= lectionId %>"><span class="b-week__date"><%= GetTextDate(day, 'weeksDate') %></span> <%= lections[lectionId].name %></a></li>
+                                        <li class="b-week__item"><a href="#show/<%= lectionId %>" class="b-week__link b-open__lection" data-id="<%= lectionId %>"><span class="b-week__date"><%= GetTextDate(day, 'weeksDate') %></span> <%= lections[lectionId].name %></a></li>
                                     <% }); %>
                                 <% }); %>
                             </ul>
@@ -60,7 +60,7 @@
                             <% _.each(dayLections, function (lectionId) { %>
                                 <% var lection = lections[lectionId]; %>
                                 <div class="b-lections__lection">
-                                    <a href="#" class="b-lections__link b-open__lection">
+                                    <a href="#show/<%= lectionId %>" class="b-lections__link b-open__lection">
                                         <span class="b-lections__time"><%= lection.time %></span>
                                         <%= lection.name %> <span class="b-lections__lector"></span>
                                     </a>
@@ -78,7 +78,7 @@
         </script>
 		
 		<script type="text/template" class="b-lection__week">
-            <h1 class="b-timetable__weekname"><%= week.name %></h1>
+			<h1 class="b-timetable__weekname"><%= week.name %></h1>
             <% _.each(week.meta, function (meta) { %>
             <span class="b-timetable__meta"><%= meta %></span>
             <% }); %>
@@ -103,6 +103,49 @@
                 </li>
                 <% }); %>
             </ul>
+        </script>
+		
+		<script type="text/template" class="b-lection__template">
+            <div class="b-lection__descr">
+                <h1><div class="b-edit" data-type="name"><span class="b-edit__label b-lection__name"><%= lection.name %></span><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.name %>" /><i class="b-edit__ico"></i></div></h1>
+
+                <!--<span class="b-lection__date"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></span>-->
+                <div class="b-edit" data-type="date"><span class="b-lection__date"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></</span><select size="3" class="b-edit__value" style="display: none;"><% _.each(dates, function (datename) {%><option value="<%= datename %>"<% if (datename == date) { %>selected="selected"<% } %>><%= datename %></option><%}) %></select><i class="b-edit__ico"></i></div>
+                <ul>
+                    <li class="b-lection__video">
+                        <div class="b-edit" data-type="video"><a href="<%= lection.video %>" class="b-icons__video b-lection__link b-lection__link_type_video"<% if(lection.video != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">Видео</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.video %>" /><i class="b-edit__ico"></i>
+                        </div>
+                    </li>
+                    <li class="b-lection__ppt">
+                        <div class="b-edit" data-type="ppt"><a href="<%= lection.ppt %>" class="b-icons__ppt b-lection__link b-lection__link_type_ppt"<% if(lection.ppt != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">Презентация</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.ppt %>" /><i class="b-edit__ico"></i>
+                        </div>
+                    </li>
+                    <li class="b-lection__github">
+                        <div class="b-edit" data-type="github"><a href="<%= lection.github %>" class="b-icons__github b-lection__link b-lection__link_type_github"<% if(lection.github != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">GitHUB</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.github %>" /><i class="b-edit__ico"></i>
+                        </div>
+                    </li>
+                    <li class="b-lection__club">
+                        <div class="b-edit" data-type="club"><a href="<%= lection.club %>" class="b-icons__club b-lection__link b-lection__link_type_club"<% if(lection.club != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__label">Обсуждения в Клубе</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.club %>" /><i class="b-edit__ico"></i>
+                        </div>
+                    </li>
+                    <li class="b-lection__task">
+                        <div class="b-edit" data-type="task"><a href="<%= lection.task %>" class="b-icons__task b-lection__link b-lection__link_type_task"<% if(lection.task != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__task">Задание</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.task %>" /><i class="b-edit__ico"></i>
+                        </div>
+                    </li>
+                    <li class="b-lection__descr">
+                        <div class="b-edit" data-type="descr"><a href="<%= lection.descr %>" class="b-icons__descr b-lection__link b-lection__link_type_descr"<% if(lection.descr != '') { %> style="background-position: 0 0;"<% } %>><span class="b-edit__descr">Описание</span></a><input type="text" class="b-edit__value" style="display: none;" value="<%= lection.descr %>" /><i class="b-edit__ico"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="b-lector">
+                <% lector = lectors[lection.lector] %>
+                <img src="<% if (lector.photo == '') { %>pic1.jpg<% } else { %><%= lector.photo %><% }%>" alt="" class="b-lector__img"/>
+                <div class="b-edit" data-type="lector">
+                    <a href="<%= lector.link %>" class="b-lector__name"><span class="b-edit__lectorname"><%= lector.name %></span></a>
+                    <select size="3" class="b-edit__value" style="display: none;"><% _.each(lectors, function (lector, id) { %><option<% if (id == lection.lector ) { %> selected="selected"<% } %> value="<%= id %>"><%= lector.name %></option><% }); %></select><i class="b-edit__ico"></i>
+                </div>
+            </div>
         </script>
      
         <script>
@@ -276,12 +319,109 @@
                     getWeek: function () {
                         return this.get(this.get('name'));
                     }
+                }))(),
+				Lection: new (Backbone.Model.extend({
+                    defaults: {
+                        id: false,
+                        name: 'lection',
+                        lection: {}
+                    },
+                    initialize: function() {
+                        this.bind("change", function(){
+                            if (this.get('id') !== false) {
+                                Views.ViewLection.render(this);
+                            }
+                        });
+                    },
+                    setLection: function (id) {
+                        var params = {id: false, lection: {}};
+                        this.set(params);
+
+                        var lection = Models.Lections.getById(id);
+
+                        if (lection) {
+                            params['id'] = parseInt(id);
+                            params[this.get('name')] = lection;
+                            this.set(params);
+                            return true;
+                        }
+                        return false;
+                    },
+                    getLection: function () {
+                        return this.get(this.get('name'));
+                    },
+                    getLectionDate: function () {
+                        var id = this.get('id'), date;
+                        if (id === false) {
+                            return false;
+                        }
+
+                        var weeks = Models.Weeks.getAll();
+                        for (var weekIndex in weeks) {
+                            for (var day in weeks[weekIndex].dates) {
+                                if ($.inArray(id, weeks[weekIndex].dates[day]) != -1) {
+                                    return day;
+                                }
+                            }
+                        }
+                        return false;
+                    },
+                    update: function (field, value) {
+                        var id = this.get('id');
+                        if (id === false) {
+                            return false;
+                        }
+
+                        if (field == "date") {
+                            var weeks = Models.Weeks.getAll();
+                            var dates = [];
+                            for (var weekIndex in weeks) {
+                                for (var date in weeks[weekIndex].dates) {
+                                    var index = $.inArray(id, weeks[weekIndex].dates[date]);
+                                    if (index != -1) {
+                                        weeks[weekIndex].dates[date].splice(index, 1);
+                                    }
+                                    if (date == value) {
+                                        weeks[weekIndex].dates[date].push(id);
+                                    }
+                                }
+                            }
+                            Models.Weeks.set(Models.Weeks.get('name'), weeks);
+                        } else {
+                            var element = this.get(this.get('name'));
+                            element[field] = value;
+                            Models.Lections.replace(id, element);
+                        }
+
+                        this.setLection(id);
+                        return true;
+                    }
                 }))()
             };
 
             var timetable = $(".b-timetable");
 
             Views = {
+				ViewLection: new (Backbone.View.extend({
+                    el: $(".b-lection"),
+                    render: function () {
+                        var lection = Models.Lection.getLection();
+                        var weeks = Models.Weeks.getAll();
+                        var dates = [];
+                        for (var weekIndex in weeks) {
+                            for (date in weeks[weekIndex].dates) {
+                                dates.push(date);
+                            }
+                        }
+                        $(this.el).html(_.template($('.b-lection__template').html(), {
+                            lection: lection,
+                            date: Models.Lection.getLectionDate(),
+                            lectors: Models.Lectors.getAll(),
+                            dates: dates
+                        }));
+                        $('.b-popup').show();
+                    }
+                }))(),
                 ViewAllLections: new (Backbone.View.extend({
                     el: timetable,
                     render: function () {
@@ -320,7 +460,8 @@
                 routes: {
                     "": "MainPage",
                     "/": "MainPage",
-					"week/:id": "ShowWeek"
+					"week/:id": "ShowWeek",
+					"show/:id": "ShowLection",
                 },
                 MainPage: function () {
                     Views.ViewTopWeeks.render();
@@ -329,13 +470,34 @@
                 ShowWeek: function (id) {
                     Models.Week.setWeek(id);
                     Views.ViewTopWeeks.render();
+                },
+                ShowLection: function (id) {
+                    Models.Lection.setLection(id);
+                    Views.ViewTopWeeks.render();
+                    if (!Views.ViewWeekLections.render()) {
+                        Views.ViewAllLections.render();
+                    }
                 }
               
             });
 
             var controller = new Controller(); // Создаём контроллер
             Backbone.history.start();  // Запускаем HTML5 History push
-
+			
+            $(document).ready(function () {
+                $('.b-popup__close').click(function () {
+                    //$(this).closest('.b-popup').hide();
+                    $('.b-popup').hide();
+                    Models.Lection.set('id', false);
+                    var id = Models.Week.get('id');
+                    if (id !== false) {
+                        document.location = '#week/'+id;
+                    } else {
+                        document.location = '#main';
+                    }
+                    return true;
+                });
+			});
            
         </script>
 
