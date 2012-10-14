@@ -6,6 +6,8 @@
     *zoom:1;
     *display:inline;
     vertical-align: top;
+
+    line-height: 19px;
 }
 
 .b-edit__ico {
@@ -36,4 +38,13 @@
     width: 150px;
 
     color: #333;
+}
+
+.b-edit__date {
+    height: 21px;
+}
+
+.b-edit__select {
+    position: absolute;
+    z-index: 100;
 }

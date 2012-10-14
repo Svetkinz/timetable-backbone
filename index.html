@@ -477,16 +477,16 @@
             <div class="b-lection__descr">
                 <h1>
                     <div class="b-edit" data-type="name">
-                        <span class="b-edit__label b-lection__name"><%= lection.name %></span>
+                        <a><span class="b-edit__label b-lection__name"><%= lection.name %></span></a>
                         <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.name %>" />
                         <i class="b-edit__ico"></i>
                     </div>
                 </h1>
 
 
-                <div class="b-edit" data-type="date">
-                    <span class="b-lection__date"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></</span>
-                    <select size="3" class="b-edit__value" style="display: none;">
+                <div class="b-edit b-edit__date" data-type="date">
+                    <a><span class="b-lection__date b-edit__label"><%= GetTextDate(date, 'lectionDate') %>, <%= lection.time %></</span></a>
+                    <select size="3" class="b-edit__value b-edit__select" style="display: none;">
                         <% _.each(dates, function (datename) {%>
                             <option value="<%= datename %>"<% if (datename == date) { %>selected="selected"<% } %>><%= datename %></option>
                         <%}) %></select>
@@ -555,7 +555,7 @@
                 <img src="<% if (lector.photo == '') { %>pic1.jpg<% } else { %><%= lector.photo %><% }%>" alt="" class="b-lector__img"/>
                 <div class="b-edit" data-type="lector">
                     <a href="<%= lector.link %>" class="b-lector__name">
-                        <span class="b-edit__lectorname"><%= lector.name %></span>
+                        <span class="b-edit__lectorname b-edit__label"><%= lector.name %></span>
                     </a>
                     <select size="3" class="b-edit__value" style="display: none;">
                         <% _.each(lectors, function (lector, id) { %>
