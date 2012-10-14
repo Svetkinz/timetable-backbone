@@ -369,7 +369,7 @@
 
 <body>
     <div class="b-nav"></div>
-	<div class="b-update">
+	<div class="b-update"><a href="index.html" class="b-timetable__index">Главная</a>
         <div class="b-update__link">
             <a href="#" class="b-update__enter b-update__btn">Обновить расписание</a>
         </div>
@@ -729,6 +729,14 @@
                             Models.Lections.replace(id, element);
                         }
                         this.setLection(id);
+                        Views.ViewTopWeeks.render();
+                        var id = Models.Week.get('id');
+                        if (id !== false) {
+                            Views.ViewWeekLections.render();
+                        } else {
+                            Views.ViewAllLections.render();
+                        }
+                        return true;
                         return true;
                     }
                 }))()
