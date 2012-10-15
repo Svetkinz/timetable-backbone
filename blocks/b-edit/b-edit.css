@@ -44,7 +44,8 @@
     height: 21px;
 }
 
-.b-edit__select {
+.b-edit__select, .b-edit__textarea {
     position: absolute;
     z-index: 100;
+	margin: 0;
 }

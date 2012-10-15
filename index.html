@@ -343,7 +343,7 @@
                     "22.09.2012" : [7, 8, 9]
                 },
                 "name": "1 неделя",
-                "meta": ["техологии", "инструменты"]
+                "meta": ["технологии", "инструменты"]
             },
             {
                 "dates": {
@@ -352,7 +352,7 @@
                     "27.09.2012" : [15, 16]
                 },
                 "name": "2 неделя",
-                "meta": ["техологии", "языки"]
+                "meta": ["технологии", "языки"]
             }
         ];
 
@@ -535,18 +535,18 @@
                     <li class="b-lection__task">
                         <div class="b-edit" data-type="task">
                             <a class="b-icons__task b-lection__link b-lection__link_type_task"<% if(lection.task != '') { %> style="background-position: 0 0;"<% } %>>
-                                <span class="b-edit__task"><% if(lection.task != '') {%> <%= lection.task%> <%} else {%>Задание<% } %></span>
+                                <span class="b-edit__task b-edit__label"><% if(lection.task != '') {%> <%= lection.task%> <%} else {%>Задание<% } %></span>
                             </a>
-                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.task %>" />
+                            <textarea class="b-edit__value b-edit__textarea" style="display: none;"><%= lection.task %></textarea>
                             <i class="b-edit__ico"></i>
                         </div>
                     </li>
                     <li class="b-lection__descr">
                         <div class="b-edit" data-type="descr">
                             <a href="<%= lection.descr %>" class="b-icons__descr b-lection__link b-lection__link_type_descr"<% if(lection.descr != '') { %> style="background-position: 0 0;"<% } %>>
-                                <span class="b-edit__descr"><% if(lection.descr != '') {%> <%= lection.descr%> <%} else {%>Описание<% } %></span>
+                                <span class="b-edit__descr b-edit__label"><% if(lection.descr != '') {%> <%= lection.descr%> <%} else {%>Описание<% } %></span>
                             </a>
-                            <input type="text" class="b-edit__value" style="display: none;" value="<%= lection.descr %>" />
+                            <textarea class="b-edit__value b-edit__textarea" style="display: none;"><%= lection.descr %></textarea>
                             <i class="b-edit__ico"></i>
                         </div>
                     </li>
