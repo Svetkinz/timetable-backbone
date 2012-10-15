@@ -19,9 +19,7 @@
     <script>
     var storageLength = localStorage.length;
 
-    console.log(storageLength);
-
-    if(storageLength === 0) {
+    if((storageLength === 0)||(localStorage.getItem("lections") === null)||(localStorage.getItem("weeks") === null)||(localStorage.getItem("lectors") === null)) {
         var lectors = [
             {
                 "name" : "Михаил Трошев",
@@ -136,7 +134,7 @@
         ];
         localStorage.lectors = JSON.stringify(lectors);
 
-        var lectionsdata = [
+        var lections = [
             {
                 "time" : "12:00",
                 "name" : "Общий цикл",
@@ -326,7 +324,7 @@
             }
         ];
 
-        localStorage.lections = JSON.stringify(lectionsdata);
+        localStorage.lections = JSON.stringify(lections);
 
         var weeks = [
             {
@@ -805,7 +803,7 @@
             var Controller = Backbone.Router.extend({
                 routes: {
                     "": "MainPage",
-                    "/": "MainPage",
+                    "main": "MainPage",
 					"week/:id": "ShowWeek",
 					"show/:id": "ShowLection"
                 },
