@@ -137,7 +137,7 @@
         var lections = [
             {
                 "time" : "12:00",
-                "name" : "Общий цикл",
+                "name" : "Общий цикл разработки",
                 "lector" : "0",
                 "video" : "http://yadi.sk/d/Lr0Y4WO606jTc",
                 "ppt" : "http://yadi.sk/d/VDsJ4ZUBiq6u",
@@ -729,6 +729,7 @@
                             Models.Lections.replace(id, element);
                         }
                         this.setLection(id);
+						localStorage.lections = JSON.stringify(Models.Lections.get('lections'));
                         Views.ViewTopWeeks.render();
                         var id = Models.Week.get('id');
                         if (id !== false) {
